@@ -2,7 +2,7 @@
 # Aufruf: https://DEINE-DOMAIN/admin/  →  "Sign in with Token" (GitHub-Token)
 backend:
   name: github
-  repo: DEIN-GITHUB-NAME/greifbar   # ← nach dem Anlegen des GitHub-Repos anpassen
+  repo: filip-kucharko/greifbar
   branch: main
 
 locale: de
