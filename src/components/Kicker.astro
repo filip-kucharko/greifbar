@@ -1,0 +1,10 @@
+---
+import { rubrikName, datumLang } from '../rubriken';
+interface Props { rubrik: string; datum: Date; muster?: boolean; }
+const { rubrik, datum, muster = false } = Astro.props;
+---
+<p class="kicker">
+  <span>{rubrikName(rubrik)}</span>
+  <time datetime={datum.toISOString().slice(0, 10)}>{datumLang(datum)}</time>
+  {muster && <span class="muster">Musterartikel</span>}
+</p>

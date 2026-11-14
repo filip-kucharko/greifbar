@@ -1,0 +1,20 @@
+---
+import { rubrikName, datumKurz } from '../rubriken';
+interface Props { artikel: any[] }
+const { artikel } = Astro.props;
+---
+<ul class="liste" id="liste">
+  {artikel.map((a) => (
+    <li data-rubrik={a.data.rubrik} data-text={`${a.data.titel} ${a.data.lead}`.toLowerCase()}>
+      <a href={`/artikel/${a.id}/`}>
+        <time datetime={a.data.datum.toISOString().slice(0, 10)}>{datumKurz(a.data.datum)}</time>
+        <div>
+          <p class="kicker" style="margin-bottom:4px"><span>{rubrikName(a.data.rubrik)}</span>{a.data.muster && <span class="muster">Musterartikel</span>}</p>
+          <span class="titel">{a.data.titel}</span>
+          <p class="lead">{a.data.lead}</p>
+        </div>
+        <div class="mini">{a.data.bild && <img src={a.data.bild} alt="" loading="lazy" />}</div>
+      </a>
+    </li>
+  ))}
+</ul>

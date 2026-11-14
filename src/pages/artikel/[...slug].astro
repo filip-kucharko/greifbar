@@ -1,0 +1,72 @@
+---
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Kicker from '../../components/Kicker.astro';
+import { alleArtikel } from '../../lib';
+import { datumLang, lesezeit, rubrikName } from '../../rubriken';
+
+export async function getStaticPaths() {
+  const artikel = await alleArtikel();
+  return artikel.map((a) => ({ params: { slug: a.id }, props: { eintrag: a, alle: artikel } }));
+}
+
+const { eintrag, alle } = Astro.props;
+const d = eintrag.data;
+const { Content } = await render(eintrag);
+const minuten = lesezeit(eintrag.body ?? '');
+const mehr = alle.filter((a) => a.data.rubrik === d.rubrik && a.id !== eintrag.id).slice(0, 3);
+---
+<Layout titel={d.titel} beschreibung={d.lead} aktiv={d.rubrik}>
+  <article>
+    <header class="artikel" style="padding-bottom:0">
+      <Kicker rubrik={d.rubrik} datum={d.datum} muster={d.muster} />
+      <h1>{d.titel}</h1>
+      <p class="lead">{d.lead}</p>
+      <div class="byline">
+        <span>Von <strong>{d.autor}</strong></span>
+        <span>{datumLang(d.datum)}</span>
+        <span>{minuten} Min. Lesezeit</span>
+      </div>
+    </header>
+
+    {d.bild && (
+      <figure class="artikelbild">
+        <div class="bildrahmen"><img src={d.bild} alt={d.bildAlt ?? ''} /></div>
+        {(d.bildAlt || d.bildQuelle) && (
+          <figcaption>
+            {d.bildAlt}{d.bildAlt && d.bildQuelle && ' · '}{d.bildQuelle && <>Bild: {d.bildQuelle}</>}
+          </figcaption>
+        )}
+      </figure>
+    )}
+
+    <div class="artikel" style="padding-top:0">
+      <div class="text"><Content /></div>
+
+      {d.einordnung && (
+        <aside class="einordnung">
+          <h2>Warum das wichtig ist</h2>
+          <p>{d.einordnung}</p>
+        </aside>
+      )}
+
+      {d.quellen.length > 0 && (
+        <section class="quellen">
+          <h2>Quellen</h2>
+          <ul>{d.quellen.map((q) => <li><a href={q.url} rel="noopener">{q.name}</a></li>)}</ul>
+        </section>
+      )}
+    </div>
+  </article>
+
+  {mehr.length > 0 && (
+    <section>
+      <h2 class="rubrikkopf">Mehr aus {rubrikName(d.rubrik)} <a href={`/rubrik/${d.rubrik}/`}>Alle anzeigen</a></h2>
+      <ul class="kurz" style="padding-bottom:30px">
+        {mehr.map((a) => (
+          <li><a href={`/artikel/${a.id}/`}><span class="titel">{a.data.titel}</span></a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Layout>

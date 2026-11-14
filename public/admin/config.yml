@@ -1,0 +1,55 @@
+# Redaktionsoberfläche von Greifbar (Sveltia CMS)
+# Aufruf: https://DEINE-DOMAIN/admin/  →  "Sign in with Token" (GitHub-Token)
+backend:
+  name: github
+  repo: DEIN-GITHUB-NAME/greifbar   # ← nach dem Anlegen des GitHub-Repos anpassen
+  branch: main
+
+locale: de
+
+# Hochgeladene Bilder landen hier und sind dann unter /bilder/... erreichbar
+media_folder: public/bilder
+public_folder: /bilder
+
+collections:
+  - name: artikel
+    label: Artikel
+    label_singular: Artikel
+    folder: src/content/artikel
+    create: true
+    delete: true
+    slug: "{{titel}}"
+    summary: "{{datum | date('DD.MM.YYYY')}} · {{rubrik}} · {{titel}}"
+    sortable_fields: [datum, titel, rubrik]
+    view_filters:
+      - { label: Entwürfe, field: entwurf, pattern: true }
+    fields:
+      - { label: Titel, name: titel, widget: string, hint: "Konkret: Wer hat was gemacht? Max. ca. 80 Zeichen." }
+      - { label: Lead, name: lead, widget: text, hint: "1–2 Sätze: Wer, was, wann, wo. Wer nur das liest, kennt das Wichtigste." }
+      - { label: Datum, name: datum, widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+      - label: Rubrik
+        name: rubrik
+        widget: select
+        options:
+          - { label: Industrie, value: industrie }
+          - { label: Medizin, value: medizin }
+          - { label: Mobilität, value: mobilitaet }
+          - { label: Logistik, value: logistik }
+          - { label: Forschung, value: forschung }
+          - { label: "Startups & Kapital", value: startups }
+          - { label: Wochenrückblick, value: wochenrueckblick }
+      - { label: Autor, name: autor, widget: string, default: "Filip Kucharko" }
+      - { label: Bild, name: bild, widget: image, required: false }
+      - { label: Bildbeschreibung, name: bildAlt, widget: string, required: false, hint: "Was ist auf dem Bild zu sehen? Erscheint auch als Bildunterschrift." }
+      - { label: Bildquelle, name: bildQuelle, widget: string, required: false, hint: "Pflicht bei fremden Bildern, z. B. 'KUKA AG / Pressebild'" }
+      - { label: Text, name: body, widget: markdown }
+      - { label: "Warum das wichtig ist", name: einordnung, widget: text, required: false, hint: "Deine Einordnung in 2–3 Sätzen." }
+      - label: Quellen
+        name: quellen
+        widget: list
+        required: false
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Link, name: url, widget: string }
+      - { label: "Als Aufmacher zeigen", name: aufmacher, widget: boolean, default: false, required: false }
+      - { label: "Entwurf (nicht veröffentlichen)", name: entwurf, widget: boolean, default: false, required: false }

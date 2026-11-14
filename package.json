@@ -1,0 +1,20 @@
+{
+  "name": "greifbar",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource/newsreader": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/source-sans-3": "^5.3.1",
+    "astro": "^5.18.2"
+  },
+  "type": "module"
+}

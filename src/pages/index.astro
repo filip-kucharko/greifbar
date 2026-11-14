@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Kicker from '../components/Kicker.astro';
+import { alleArtikel } from '../lib';
+import { rubrikName } from '../rubriken';
+
+const artikel = await alleArtikel();
+const ohneRueckblick = artikel.filter((a) => a.data.rubrik !== 'wochenrueckblick');
+// Aufmacher: der neueste Artikel mit "aufmacher: true", sonst einfach der neueste
+const auf = ohneRueckblick.find((a) => a.data.aufmacher) ?? ohneRueckblick[0];
+const rest = ohneRueckblick.filter((a) => a.id !== auf?.id);
+const rueckblick = artikel.find((a) => a.data.rubrik === 'wochenrueckblick');
+const drei = rest.slice(0, 3);
+const gross = rest[3];
+const kurz = rest.slice(4, 10);
+---
+<Layout aktiv="start">
+  {!auf && <p class="leer">Noch keine Artikel veröffentlicht.</p>}
+
+  {auf && (
+    <section class="band">
+      <a href={`/artikel/${auf.id}/`}>
+        <div class="text-teil">
+          <div>
+            <h2>{auf.data.titel}</h2>
+            <p class="lead">{auf.data.lead}</p>
+          </div>
+          <Kicker rubrik={auf.data.rubrik} datum={auf.data.datum} muster={auf.data.muster} />
+        </div>
+        {auf.data.bild && <div class="bildrahmen"><img src={auf.data.bild} alt={auf.data.bildAlt ?? ''} /></div>}
+      </a>
+    </section>
+  )}
+
+  {drei.length > 0 && (
+    <section class="teaser3" aria-label="Aktuelle Artikel">
+      {drei.map((a) => (
+        <article>
+          <a href={`/artikel/${a.id}/`}>
+            <div class="bildrahmen">{a.data.bild && <img src={a.data.bild} alt={a.data.bildAlt ?? ''} loading="lazy" />}</div>
+            <div>
+              <p class="kicker"><span>{rubrikName(a.data.rubrik)}</span>{a.data.muster && <span class="muster">Muster</span>}</p>
+              <span class="titel">{a.data.titel}</span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </section>
+  )}
+
+  <section class="unten">
+    <div class="hauptspalte">
+      {gross && (
+        <article class="gross">
+          <a href={`/artikel/${gross.id}/`}>
+            {gross.data.bild && <div class="bildrahmen"><img src={gross.data.bild} alt={gross.data.bildAlt ?? ''} loading="lazy" /></div>}
+            <h3>{gross.data.titel}</h3>
+          </a>
+          <div style="margin-top:10px"><Kicker rubrik={gross.data.rubrik} datum={gross.data.datum} muster={gross.data.muster} /></div>
+          <p class="lead">{gross.data.lead}</p>
+        </article>
+      )}
+      {kurz.length > 0 && (
+        <>
+          <h3 class="rubrikkopf" style="font-size:22px">Weitere Meldungen</h3>
+          <ul class="kurz">
+            {kurz.map((a) => (
+              <li><a href={`/artikel/${a.id}/`}><p class="kicker"><span>{rubrikName(a.data.rubrik)}</span></p><span class="titel">{a.data.titel}</span></a></li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+    <aside class="seitenspalte">
+      {rueckblick && (
+        <a class="rueckblick" href={`/artikel/${rueckblick.id}/`} style="display:block">
+          {rueckblick.data.bild && <div class="bildrahmen" style="margin-bottom:14px"><img src={rueckblick.data.bild} alt="" loading="lazy" /></div>}
+          <Kicker rubrik={rueckblick.data.rubrik} datum={rueckblick.data.datum} muster={rueckblick.data.muster} />
+          <h4>{rueckblick.data.titel}</h4>
+          <p>{rueckblick.data.lead}</p>
+        </a>
+      )}
+    </aside>
+  </section>
+</Layout>

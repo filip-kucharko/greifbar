@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Liste from '../../components/Liste.astro';
+import { alleArtikel } from '../../lib';
+import { RUBRIKEN } from '../../rubriken';
+
+export function getStaticPaths() {
+  return RUBRIKEN.map((r) => ({ params: { rubrik: r.slug }, props: { name: r.name } }));
+}
+const { rubrik } = Astro.params;
+const { name } = Astro.props;
+const artikel = (await alleArtikel()).filter((a) => a.data.rubrik === rubrik);
+---
+<Layout titel={name} aktiv={rubrik}>
+  <section class="archivkopf"><h1>{name}</h1></section>
+  {artikel.length === 0
+    ? <p class="leer">In dieser Rubrik gibt es noch keine Artikel.</p>
+    : <Liste artikel={artikel} />}
+</Layout>

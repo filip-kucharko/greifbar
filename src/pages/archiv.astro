@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Liste from '../components/Liste.astro';
+import { alleArtikel } from '../lib';
+import { RUBRIKEN } from '../rubriken';
+const artikel = await alleArtikel();
+---
+<Layout titel="Archiv" aktiv="archiv">
+  <section class="archivkopf">
+    <h1>Archiv</h1>
+    <div class="filter" role="group" aria-label="Nach Rubrik filtern">
+      <button type="button" data-f="" aria-pressed="true">Alle</button>
+      {RUBRIKEN.map((r) => <button type="button" data-f={r.slug} aria-pressed="false">{r.name}</button>)}
+    </div>
+    <label for="suche" style="position:absolute;left:-9999px">Artikel durchsuchen</label>
+    <input id="suche" class="suche" type="search" placeholder="Artikel durchsuchen, z. B. Cobot" />
+  </section>
+  <Liste artikel={artikel} />
+  <p class="leer" id="leer" hidden>Keine Artikel gefunden.</p>
+
+  <script is:inline>
+    {
+      const knoepfe = [...document.querySelectorAll('.filter button')];
+      const zeilen = [...document.querySelectorAll('#liste li')];
+      const suche = document.getElementById('suche');
+      const leer = document.getElementById('leer');
+      let rubrik = (location.hash || '').slice(1);
+
+      const anwenden = () => {
+        const q = suche.value.trim().toLowerCase();
+        let n = 0;
+        zeilen.forEach((z) => {
+          const ok = (!rubrik || z.dataset.rubrik === rubrik) && (!q || z.dataset.text.includes(q));
+          z.hidden = !ok;
+          if (ok) n++;
+        });
+        knoepfe.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === rubrik)));
+        leer.hidden = n > 0;
+      };
+      knoepfe.forEach((b) => b.addEventListener('click', () => {
+        rubrik = b.dataset.f;
+        try { history.replaceState(null, '', rubrik ? '#' + rubrik : location.pathname); } catch (e) {}
+        anwenden();
+      }));
+      suche.addEventListener('input', anwenden);
+      anwenden();
+    }
+  </script>
+</Layout>

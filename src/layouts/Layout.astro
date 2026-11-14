@@ -1,0 +1,75 @@
+---
+import '@fontsource/newsreader/400.css';
+import '@fontsource/newsreader/400-italic.css';
+import '@fontsource/newsreader/500.css';
+import '@fontsource/newsreader/600.css';
+import '@fontsource/playfair-display/700.css';
+import '@fontsource/playfair-display/900.css';
+import '@fontsource/source-sans-3/400.css';
+import '@fontsource/source-sans-3/600.css';
+import '@fontsource/source-sans-3/700.css';
+import '../styles/global.css';
+import { RUBRIKEN } from '../rubriken';
+import Logo from '../components/Logo.astro';
+
+interface Props {
+  titel?: string;
+  beschreibung?: string;
+  aktiv?: string;
+}
+const { titel, beschreibung = 'Robotik aus Deutschland, Österreich und der Schweiz – kurz, verständlich, eingeordnet.', aktiv = '' } = Astro.props;
+const seitentitel = titel ? `${titel} – Greifbar` : 'Greifbar – Robotik aus dem DACH-Raum';
+---
+<!doctype html>
+<html lang="de-AT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{seitentitel}</title>
+    <meta name="description" content={beschreibung} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="kopf wrap">
+      <div class="zeile">
+        <span id="heute">Robotik-Nachrichten</span>
+        <span>Deutschland · Österreich · Schweiz</span>
+      </div>
+      <a class="titelkopf" href="/" aria-label="Greifbar – Startseite"><Logo class="kopflogo" /><span class="wort">Greifbar<span>.</span></span></a>
+      <p class="unterzeile">Robotik aus dem DACH-Raum – kurz, verständlich, eingeordnet</p>
+      <nav class="nav" aria-label="Rubriken">
+        <a href="/" aria-current={aktiv === 'start' ? 'page' : undefined}>Aktuell</a>
+        {RUBRIKEN.map((r) => (
+          <a href={`/rubrik/${r.slug}/`} aria-current={aktiv === r.slug ? 'page' : undefined}>{r.name}</a>
+        ))}
+        <a href="/archiv/" aria-current={aktiv === 'archiv' ? 'page' : undefined}>Archiv</a>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <slot />
+    </main>
+
+    <footer class="fuss">
+      <div class="wrap innen">
+        <span class="marke"><Logo size={34} /><span>Greifbar<span>.</span></span></span>
+        <nav aria-label="Service">
+          <a href="/archiv/">Archiv</a>
+          <a href="/ueber/">Über Greifbar</a>
+          <a href="/impressum/">Impressum</a>
+        </nav>
+        <span>© {new Date().getFullYear()} Greifbar</span>
+      </div>
+    </footer>
+
+    <script is:inline>
+      {
+        const el = document.getElementById('heute');
+        try {
+          const t = new Date().toLocaleDateString('de-AT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+          if (el) el.textContent = t;
+        } catch (e) {}
+      }
+    </script>
+  </body>
+</html>
