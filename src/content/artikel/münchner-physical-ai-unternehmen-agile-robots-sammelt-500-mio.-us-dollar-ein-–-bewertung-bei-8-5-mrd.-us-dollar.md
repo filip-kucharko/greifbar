@@ -4,7 +4,7 @@ lead: Das Münchner Unternehmen Agile Robots hat in einer neuen Finanzierungsrun
 datum: 2026-11-15
 rubrik: startups
 autor: Filip Kucharko
-bild: https://images.handelsblatt.com/IBccpS94GRRf/cover/2048/1365/0/0/17/17/0.5/0.5/agile-robots.jpg
+bild: ''
 bildAlt: Der humanoide Roboter Agile One.
 bildQuelle: https://images.handelsblatt.com/IBccpS94GRRf/cover/2048/1365/0/0/17/17/0.5/0.5/agile-robots.jpg
 einordnung: |-
