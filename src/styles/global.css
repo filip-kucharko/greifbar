@@ -249,3 +249,7 @@ a:hover h2, a:hover h3, a:hover .titel { text-decoration: underline; text-decora
 /* ---------- Logo ---------- */
 .kopflogo { width: 1em; height: 1em; flex: none; margin-bottom: 0.02em; }
 .fuss .marke { display: inline-flex; align-items: flex-end; gap: 6px; }
+
+/* Aufmacher ohne Bild: Text über die ganze Breite */
+.band > a:not(:has(.bildrahmen)) { grid-template-columns: minmax(0, 1fr); }
+.band > a:not(:has(.bildrahmen)) .text-teil { max-width: 860px; }
