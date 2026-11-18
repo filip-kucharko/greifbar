@@ -4,9 +4,9 @@ lead: Das Münchner Unternehmen Agile Robots hat in einer neuen Finanzierungsrun
 datum: 2026-11-15
 rubrik: startups
 autor: Filip Kucharko
-bild: ''
+bild: /bilder/Agile Robots Agile ONE_HighRes_LeopoldFiala.jpg
 bildAlt: Der humanoide Roboter Agile One.
-bildQuelle: ''
+bildQuelle: Agile Robots / Leopold Fiala
 einordnung: |-
   Für SoftBank ist Agile Robots keine neue Wette. Der japanische Konzern führte bereits 2021 die Finanzierungsrunde an, die Agile Robots zum ersten deutschen Robotik-Einhorn machte. Im Herbst 2025 kaufte SoftBank außerdem die Robotik-Sparte des Schweizer Konzerns ABB für 5,4 Mrd. US-Dollar. Die neue Runde passt in einen weltweiten Trend. Laut PitchBook haben sich die Investitionen in Robotik-Start-ups 2025 mehr als verdreifacht, auf 27,6 Mrd. US-Dollar.
 
