@@ -9,6 +9,15 @@ backend:
 media_folder: public/bilder
 public_folder: /bilder
 
+
+# Artikel-Adressen ohne Umlaute und Sonderzeichen (ü → ue, ß → ss), höchstens 80 Zeichen
+slug:
+  encoding: ascii
+  clean_accents: true
+  transliterate_locale: de
+  sanitize_replacement: "-"
+  maxlength: 80
+
 collections:
   - name: artikel
     label: Artikel
