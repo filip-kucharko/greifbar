@@ -5,8 +5,6 @@ backend:
   repo: filip-kucharko/greifbar
   branch: main
 
-locale: de
-
 # Hochgeladene Bilder landen hier und sind dann unter /bilder/... erreichbar
 media_folder: public/bilder
 public_folder: /bilder

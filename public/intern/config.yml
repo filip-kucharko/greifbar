@@ -1,0 +1,68 @@
+# Interne Kontaktverwaltung von Greifbar (Sveltia CMS)
+# Aufruf: https://greifbar.eu/intern/  →  "Sign in with Token"
+# Die Daten liegen NICHT im öffentlichen Website-Repo, sondern im privaten Repo greifbar-intern.
+backend:
+  name: github
+  repo: filip-kucharko/greifbar-intern
+  branch: main
+
+# Angehängte Dateien (z. B. PDFs) landen im privaten Repo in diesem Ordner
+media_folder: anhaenge
+public_folder: /anhaenge
+
+collections:
+  - name: kontakte
+    label: Kontakte
+    label_singular: Kontakt
+    folder: kontakte
+    extension: yml
+    format: yml
+    create: true
+    delete: true
+    slug: "{{firma}}-{{name}}"
+    summary: "{{firma}} · {{name}}"
+    sortable_fields: [firma, name, art]
+    view_groups:
+      - { label: Firma, field: firma }
+      - { label: Art, field: art }
+    view_filters:
+      - { label: Im Presseverteiler, field: presseverteiler, pattern: true }
+    fields:
+      - { label: Name, name: name, widget: string, hint: "Vor- und Nachname, z. B. Anna Bopp" }
+      - { label: Firma / Organisation, name: firma, widget: string }
+      - { label: Rolle / Position, name: rolle, widget: string, required: false, hint: "z. B. Comms Team, Pressesprecherin, CEO" }
+      - label: Art des Kontakts
+        name: art
+        widget: select
+        default: Pressestelle
+        options: [Pressestelle, PR-Agentur, Unternehmen, Forschung, Interviewpartner, Sonstiges]
+      - { label: E-Mail, name: email, widget: string, required: false }
+      - { label: Telefon, name: telefon, widget: string, required: false }
+      - { label: LinkedIn, name: linkedin, widget: string, required: false, hint: "Link zum LinkedIn-Profil" }
+      - { label: Ich bin im Presseverteiler, name: presseverteiler, widget: boolean, default: false, required: false }
+      - label: Links
+        name: links
+        widget: list
+        required: false
+        hint: "Pressebereich, Press Kit, Media Hub, Website …"
+        summary: "{{fields.name}}"
+        fields:
+          - { label: Bezeichnung, name: name, widget: string, hint: "z. B. Press Kit" }
+          - { label: Link, name: url, widget: string }
+      - label: Kontaktverlauf
+        name: verlauf
+        widget: list
+        required: false
+        hint: "Jede Mail, jedes Telefonat, jedes Treffen als eigener Eintrag"
+        summary: "{{fields.datum}} · {{fields.richtung}} · {{fields.betreff}}"
+        fields:
+          - { label: Datum, name: datum, widget: datetime, time_format: false, format: "YYYY-MM-DD" }
+          - label: Art
+            name: richtung
+            widget: select
+            options: [Mail gesendet, Mail erhalten, Telefonat, Treffen, Sonstiges]
+          - { label: Betreff / Thema, name: betreff, widget: string }
+          - { label: Notiz, name: notiz, widget: text, required: false, hint: "Worum ging es, was wurde vereinbart?" }
+          - { label: Link zur Mail, name: link, widget: string, required: false, hint: "Mail in Gmail öffnen und die Adresse aus der Browserzeile kopieren" }
+          - { label: Anhang, name: anhang, widget: file, required: false, hint: "Nur kleine Dateien (z. B. PDF), max. ein paar MB" }
+      - { label: Notizen, name: notizen, widget: text, required: false, hint: "Alles Weitere: Interessen, nächste Schritte, wer wen kennt …" }
