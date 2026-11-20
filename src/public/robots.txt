@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /intern/
+
+Sitemap: https://greifbar.eu/sitemap.xml
