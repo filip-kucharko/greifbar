@@ -20,7 +20,7 @@ quellen:
     url: https://ecomento.de/2026/11/18/uber-und-momenta-starten-pilotprojekt-fuer-autonomes-fahren-in-muenchen/
   - name: Uber Newsroom
     url: https://www.uber.com/de/de/newsroom/uber-momenta-pilot/
-aufmacher: false
+aufmacher: true
 entwurf: false
 ---
 
