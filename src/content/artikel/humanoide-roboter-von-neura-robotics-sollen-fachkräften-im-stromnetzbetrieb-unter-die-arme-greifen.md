@@ -4,9 +4,9 @@ lead: Das deutsche Robotik-Start-up NEURA Robotics geht eine Partnerschaft mit d
 datum: 2026-11-19
 rubrik: industrie
 autor: Filip Kucharko
-bild: ''
-bildAlt: ''
-bildQuelle: ''
+bild: /bilder/4NE1 Gen 4.jpg
+bildAlt: Humanoide Roboter vom Typ 4NE1 Gen 4 von NEURA Robotics
+bildQuelle: Neura Robotics GmbH / Pressebild
 einordnung: |-
   Die Infrastruktur von Stromnetzen ist auf Menschen ausgelegt: Türen, Treppen, Schaltschränke und Werkzeuge sind für menschliche Hände und Bewegungsabläufe gemacht. 
   NEURA Robotics argumentiert daher, dass sich ein humanoider Roboter wie das hauseigene Modell 4NE1 dort leichter bewegen könnte, ohne dass bestehende Anlagen umgebaut werden müssen.
