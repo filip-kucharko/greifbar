@@ -22,7 +22,7 @@ quellen:
     url: https://thenextweb.com/news/softbank-agile-robots-800m-funding-talks
   - name: 'Börsen-Zeitung: Agile-Robots-Chef verhandelt wohl erneut mit Softbank (ABB-Kauf)'
     url: https://www.boersen-zeitung.de/unternehmen-branchen/agile-robots-chef-verhandelt-wohl-erneut-mit-softbank
-aufmacher: true
+aufmacher: false
 entwurf: false
 ---
 
