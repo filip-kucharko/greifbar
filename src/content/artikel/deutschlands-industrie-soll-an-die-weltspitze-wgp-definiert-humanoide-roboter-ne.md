@@ -4,9 +4,9 @@ lead: ährend humanoide Roboter in China und den USA mit Akrobatik und Kampfspor
 datum: 2026-11-21
 rubrik: forschung
 autor: Filip Kucharko
-bild: ''
-bildAlt: ''
-bildQuelle: ''
+bild: /bilder/wgp-kit-wertstromkinematik.jpg
+bildAlt: Versuchsstand mit zwei Roboterarmen am wbk Institut für Produktionstechnik des KIT
+bildQuelle: © KIT/Bramsiepe
 einordnung: |-
   Laut den von der WGP veröffentlichten Marktdaten wurden 2025 über 13.000 humanoide Roboter ausgeliefert, rund 85 Prozent davon von chinesischen Herstellern. 2026 sollen sich die chinesischen Absatzzahlen sogar verdoppeln. Eingesetzt werden die meisten dieser Roboter bisher allerdings für Vorführungen und Unterhaltung, nicht in der Fertigung. 
   Deutschland verfügt hingegen über fundiertes Produktionswissen, leistungsfähige Komponenten und etablierte Integratoren. Mit Schaeffler, NEURA Robotics und Bosch sind deutsche Firmen bereits als Hersteller und Zulieferer beteiligt, und auch BMW und Mercedes-Benz erproben erste humanoide Roboter, BMW allerdings in seinem US-Werk in Spartanburg. Diese Stärken müssen laut WGP nun in eine „gemeinsame Entwicklungs- und Umsetzungsagenda“ überführt werden. Gelingt das, hat Deutschland die Chance, mit modularen Systemen am globalen Markt wieder Anschluss zu finden.
