@@ -35,6 +35,9 @@ const zaehlen = import.meta.env.PROD && SEITE.goatcounter;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
     <title>{seitentitel}</title>
     <meta name="description" content={beschreibung} />
     <!-- Favicon: Google braucht ein quadratisches Icon, am besten ein Vielfaches von 48 px -->
@@ -66,7 +69,14 @@ const zaehlen = import.meta.env.PROD && SEITE.goatcounter;
     <header class="kopf wrap">
       <div class="zeile">
         <span id="heute">Robotik-Nachrichten</span>
-        <span>Deutschland · Österreich · Schweiz</span>
+        <span class="rechts">
+          <span>Deutschland · Österreich · Schweiz</span>
+          <button type="button" class="modus" id="modus" aria-label="Dunkelmodus einschalten">
+            <svg class="mond" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
+            <svg class="sonne" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="modus-text">Dunkel</span>
+          </button>
+        </span>
       </div>
       <a class="titelkopf" href="/" aria-label="Greifbar – Startseite"><Logo class="kopflogo" /><span class="wort">Greifbar<span>.</span></span></a>
       <p class="unterzeile">Robotik aus dem DACH-Raum – kurz, verständlich, eingeordnet</p>
@@ -103,6 +113,28 @@ const zaehlen = import.meta.env.PROD && SEITE.goatcounter;
           const t = new Date().toLocaleDateString('de-AT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
           if (el) el.textContent = t;
         } catch (e) {}
+      }
+      {
+        const knopf = document.getElementById('modus');
+        const wurzel = document.documentElement;
+        const systemDunkel = window.matchMedia('(prefers-color-scheme: dark)');
+        const istDunkel = () => wurzel.dataset.theme ? wurzel.dataset.theme === 'dark' : systemDunkel.matches;
+        const anzeigen = () => {
+          const dunkel = istDunkel();
+          knopf.setAttribute('aria-label', dunkel ? 'Hellmodus einschalten' : 'Dunkelmodus einschalten');
+          knopf.querySelector('.modus-text').textContent = dunkel ? 'Hell' : 'Dunkel';
+          knopf.classList.toggle('ist-dunkel', dunkel);
+        };
+        if (knopf) {
+          anzeigen();
+          knopf.addEventListener('click', () => {
+            const neu = istDunkel() ? 'light' : 'dark';
+            wurzel.dataset.theme = neu;
+            try { localStorage.setItem('theme', neu); } catch (e) {}
+            anzeigen();
+          });
+          systemDunkel.addEventListener?.('change', anzeigen);
+        }
       }
     </script>
   </body>

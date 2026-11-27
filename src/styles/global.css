@@ -50,6 +50,17 @@ a:hover h2, a:hover h3, a:hover .titel { text-decoration: underline; text-decora
   font: 14px/1.3 var(--sans); color: var(--mute);
   border-bottom: 1px solid var(--hair); padding-bottom: 10px;
 }
+.zeile .rechts { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.modus {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  font: 600 14px/1 var(--sans); color: var(--ink); background: transparent;
+  border: 1px solid var(--hair); border-radius: 999px; padding: 6px 12px; min-height: 32px;
+}
+.modus:hover { border-color: var(--ink); }
+.modus svg { width: 16px; height: 16px; }
+.modus .sonne { display: none; }
+.modus.ist-dunkel .sonne { display: block; }
+.modus.ist-dunkel .mond { display: none; }
 .titelkopf {
   display: flex; justify-content: center; align-items: flex-end; gap: 0.12em;
   font: 900 clamp(58px, 12vw, 128px)/0.95 var(--head);
