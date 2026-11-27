@@ -1,33 +1,28 @@
 ---
-titel: 'Lager Automatisierung: Hellmann und Exotec geben bekannt Skypod in das Siemens Lager in Nürnberg zu installieren'
-lead: Das globale Logistik Unternehmen Hellmann Worldwide Logistics führt das Skypod-System von der Firma Exotec am Standord der Siemens Smart Infrastructure Buildings in Nürnburg ein. Die geplante Lagerlösung soll Mitte 2027 in Betrieb gehen. Vor Ort sollen dann autonome Roboter Ein- und Auslagerung der Waren sowie Transport zur Entnahmestation übernehmen.
-datum: 2026-11-26
+titel: 'Kletternde Roboter für Siemens: Nürnberger Lager wird ab 2027 automatisiert'
+lead: Das globale Logistikunternehmen Hellmann Worldwide Logistics führt das Skypod-System der Firma Exotec am Standort der Siemens Smart Infrastructure Buildings in Nürnberg ein. Die geplante Lagerlösung soll Mitte 2027 in Betrieb gehen. Vor Ort sollen dann autonome Roboter die Ein- und Auslagerung der Waren sowie den Transport der Behälter zu den Kommissionierstationen übernehmen.
+datum: 2026-11-27
 rubrik: logistik
 autor: Filip Kucharko
 bild: /bilder/hellmann-exotec-skypod-ohne-logos.jpg
 bildAlt: Ein Skypod-Roboter von Exotec klettert zwischen zwei Regalreihen
 bildQuelle: Hellmann Worldwide Logistics
 einordnung: |-
-  Weltweit lässt sich ein Trend bei der Lagerlogistik beobachten. Große Industriekonzerne wie Hellmann lagern ihre Lagerarbeit an Dienstleister mit automatisierten Robotersystemen aus. Das hat weitreichende Folgen für die Konzerne selbst, die Dienstleister und die gesamte Lieferkette mit:
-  Durch das auslagern wandeln Konzerne die Kapitalbildung der Investitionskosten für teure Lagersysteme  in flexible Miet- oder Stückkosten pro bewegtes Paket um. Schwankt die Nachfrage (z.B. durch Saisongeschäft) können Robotersysteme von Dienstleistern schnell hoch- und heruntergefahren werden, als ein eigener Bau es erledigen würde.
-  Einer der Hauptgründe für diesen Trend ist nicht nur die Kosteneinsparung, sondern auch der akute Mangel an Lagerpersonal in Europa und Nordamerika. Roboter übernehmen körperlich schwere Arbeit wie das Laufen langer Strecken oder schweres Heben. Zusätzlich ändern sich die Jobprofile in der Branche. Klassische Ladetätigkeit nehmen ab. Dafür entstehen neue Rollen wie Systemüberwacher und Instandhaltungstechniker die die Roboter steuern, Fehler beheben und Daten auswerten.
+  Das Projekt in Nürnberg zeigt eine Entwicklung in der Lagerlogistik: Große Industriekonzerne wie Siemens lagern ihre Lagerarbeit an Dienstleister mit automatisierten Robotersystemen aus. Das kann Folgen für die Konzerne selbst, die Dienstleister und die gesamte Lieferkette haben. Durch das Auslagern können Konzerne hohe Investitionskosten für teure Lagersysteme in flexible Miet- oder Stückkosten umwandeln.
+  Eine Rolle spielt dabei auch der Personalmangel: Laut dem Jahresbericht 2026 des US-Branchenverbands MHI nennen 58 Prozent der befragten Führungskräfte die Gewinnung von Personal als größte Herausforderung in der Lieferkette. Roboter übernehmen dabei körperlich anstrengende Arbeit wie das Laufen langer Strecken. Was mit den Beschäftigten im Nürnberger Lager passiert, dazu gibt es bislang keine Angaben. Zusätzlich dürften sich die Jobprofile in der Branche ändern: Klassische Lagertätigkeiten könnten abnehmen, dafür könnten neue Rollen wie Systemüberwacher und Instandhaltungstechniker entstehen, die die Roboter steuern, Fehler beheben und Daten auswerten.
 quellen:
-  - name: Presseportal
+  - name: Hellmann Worldwide Logistics (Presseportal)
     url: https://www.presseportal.de/pm/106645/6397346
-  - name: Verkehrs Rundschau
+  - name: VerkehrsRundschau
     url: https://www.verkehrsrundschau.de/nachrichten/lager-umschlag/35-000-stellplaetze-roboter-uebernehmen-siemens-lager-3941806
-  - name: logistik-heute.de
+  - name: Logistik Heute
     url: https://logistik-heute.de/news/lagertechnik-unitechnik-und-exotec-geben-strategische-partnerschaft-bekannt-39912.html
-  - name: Exotec
-    url: https://www.exotec.com/news/hellmann-and-exotec-sign-global-framework-agreement/
-  - name: Valantic Logistic Outsourcing
-    url: https://www.valantic.com/de/logistik-lagerverwaltung/outsourcing/?utm_source=google&utm_medium=cpc&utm_campaign=teama_2026_einkauf-scm-logistik_dach_do&utm_content=wave1_keyword_outsourcing&utm_term=logistics%20technology&utm_campaign=SCM,+Einkauf,+Logistik&utm_source=adwords&utm_medium=ppc&utm_id=24354227894&hsa_acc=3261410107&hsa_cam=24354227894&hsa_grp=204746199521&hsa_ad=828270755735&hsa_src=g&hsa_tgt=kwd-299157197508&hsa_kw=logistics%20technology&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=24354227894&gbraid=0AAAAADl0zRaCZq4TbCp7qGRTflAYu4D-O&gclid=CjwKCAiAzp_YBhAJEiwASf8kHdgS24lBziR6WVexEIpFz9LURgrH1pdzxt21AKPUCnhKqkthhLbtMRoCq8YQAvD_BwE
-  - name: The AI‑Empowered Workforce MHI Solutions
+  - name: MHI Solutions, The AI-Empowered Workforce
     url: https://www.mhisolutionsmag.com/index.php/2026/06/26/aiempow/
 aufmacher: true
-entwurf: true
+entwurf: false
 ---
 
-Das von Exotec entwickelte Skypod-System steuert und koordiniert das Zusammenwirken der autonomen Roboter. Diese können dabei an Regalen bis zu zwölf Metern hoch "klettern". Sie entnehmen dort Tablare oder Behälter und transportieren sie im Anschluss eigenständig zu den Kommissionierplätzen. Im Hintergrund läuft die intilligente Deepsky-Software von Exotec. Sie priorisert Aufträge, verarbeitet Echtzeitdaten und arrangiert die Warenflüsse. Das System wird um das "Goods-to-Person-Prinzip" herum gestaltet, wodurch die bestehende Infrastruktur in ausgedehnten Teilen durch das neue, hochautomatisierte Konzept ersetzt wird.
+Das von Exotec entwickelte Skypod-System setzt auf autonome Roboter. Diese können an Regalen laut Exotec bis zu zwölf Meter hoch „klettern“. Sie entnehmen dort Behälter und transportieren sie im Anschluss eigenständig zu den Kommissionierstationen. Im Hintergrund läuft die intelligente Deepsky-Software von Exotec. Sie priorisiert Aufträge, verarbeitet Echtzeitdaten und steuert die Warenflüsse. Das System wird um das „Goods-to-Person-Prinzip“ herum gestaltet. Die Ware kommt also zum Menschen, nicht umgekehrt, wodurch die bestehende Lagerinfrastruktur in weiten Teilen durch das neue, hochautomatisierte Konzept ersetzt wird.
 
-Bereits seit 2025 arbeitet Hellmann als Full-Service-Dienstleister eng mit dem Siemens-Standort Nürnberg für Siemens Smart Infrustructure Buildings. Mit dem neunen System, das Robotik und Software  verbindet, soll die Intralogistik für wachsende Warenmengen und veränderte Anforderungen gestärkt werden. Andreas Stöckl, eVP Sales Central Europe bei Exotec, ergänzt: "Automatisierung ist heute weit mehr als Effizienzsteigerung. Sie schafft die notwendige Flexibilität, um auf steigende Volumina, volatile Märkte und wachsende Kundenanforderungen reagieren zu können." Gestartet wird mit rund 35.000 Stellplätzen, wobei das System bereits auf Wachstum ausgelegt ist. Zusätzlich benötigte Stellplätze und Kommissionierstationen können bei Bedarf mit geringen Aufwand ergänzt werden.
+Bereits seit 2025 betreibt Hellmann als Full-Service-Dienstleister das Lager am Siemens-Standort Nürnberg für Siemens Smart Infrastructure Buildings. Mit dem neuen System, das Robotik und Software verbindet, soll die Intralogistik für wachsende Warenmengen und veränderte Anforderungen gestärkt werden. Gestartet wird mit rund 35.000 Stellplätzen, wobei das System bereits auf Wachstum ausgelegt ist. Zusätzlich benötigte Stellplätze und Kommissionierstationen können bei Bedarf mit geringem Aufwand ergänzt werden. Andreas Stöckl, eVP Sales Central Europe bei Exotec, sagt: „Automatisierung ist heute weit mehr als Effizienzsteigerung. Sie schafft die notwendige Flexibilität, um auf steigende Volumina, volatile Märkte und wachsende Kundenanforderungen reagieren zu können.“
