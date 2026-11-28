@@ -19,7 +19,7 @@ quellen:
     url: https://logistik-heute.de/news/lagertechnik-unitechnik-und-exotec-geben-strategische-partnerschaft-bekannt-39912.html
   - name: MHI Solutions, The AI-Empowered Workforce
     url: https://www.mhisolutionsmag.com/index.php/2026/06/26/aiempow/
-aufmacher: true
+aufmacher: false
 entwurf: false
 ---
 
