@@ -23,7 +23,7 @@ quellen:
     url: https://www.netzwoche.ch/news/2022-01-31/wie-roboter-wandern-lernen
   - name: Übersichtsarbeit zu Sprachmodellen in der Roboternavigation (arXiv, 2026)
     url: https://arxiv.org/html/2606.28760v1
-aufmacher: false
+aufmacher: true
 entwurf: false
 ---
 
