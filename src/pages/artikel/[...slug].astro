@@ -16,7 +16,7 @@ const { Content } = await render(eintrag);
 const minuten = lesezeit(eintrag.body ?? '');
 const mehr = alle.filter((a) => a.data.rubrik === d.rubrik && a.id !== eintrag.id).slice(0, 3);
 ---
-<Layout titel={d.titel} beschreibung={d.lead} aktiv={d.rubrik} bild={d.bild} bildAlt={d.bildAlt} typ="article" datum={d.datum}>
+<Layout titel={d.titel} beschreibung={d.lead} aktiv={d.rubrik} bild={d.bild} bildAlt={d.bildAlt} typ="article" datum={d.datum} vorladen={d.bild}>
   <article>
     <header class="artikel" style="padding-bottom:0">
       <Kicker rubrik={d.rubrik} datum={d.datum} muster={d.muster} />
@@ -31,7 +31,7 @@ const mehr = alle.filter((a) => a.data.rubrik === d.rubrik && a.id !== eintrag.i
 
     {d.bild && (
       <figure class="artikelbild">
-        <div class="bildrahmen"><img src={d.bild} alt={d.bildAlt ?? ''} /></div>
+        <div class="bildrahmen"><img src={d.bild} alt={d.bildAlt ?? ''} fetchpriority="high" /></div>
         {(d.bildAlt || d.bildQuelle) && (
           <figcaption>
             {d.bildAlt}{d.bildAlt && d.bildQuelle && ' · '}{d.bildQuelle && <>Bild: {d.bildQuelle}</>}

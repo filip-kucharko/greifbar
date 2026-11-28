@@ -14,7 +14,7 @@ const drei = rest.slice(0, 3);
 const gross = rest[3];
 const kurz = rest.slice(4, 10);
 ---
-<Layout aktiv="start">
+<Layout aktiv="start" vorladen={auf?.data.bild}>
   {!auf && <p class="leer">Noch keine Artikel veröffentlicht.</p>}
 
   {auf && (
@@ -27,7 +27,7 @@ const kurz = rest.slice(4, 10);
           </div>
           <Kicker rubrik={auf.data.rubrik} datum={auf.data.datum} muster={auf.data.muster} />
         </div>
-        {auf.data.bild && <div class="bildrahmen"><img src={auf.data.bild} alt={auf.data.bildAlt ?? ''} /></div>}
+        {auf.data.bild && <div class="bildrahmen"><img src={auf.data.bild} alt={auf.data.bildAlt ?? ''} fetchpriority="high" /></div>}
       </a>
     </section>
   )}
@@ -37,7 +37,7 @@ const kurz = rest.slice(4, 10);
       {drei.map((a) => (
         <article>
           <a href={`/artikel/${a.id}/`}>
-            <div class="bildrahmen">{a.data.bild && <img src={a.data.bild} alt={a.data.bildAlt ?? ''} loading="lazy" />}</div>
+            <div class="bildrahmen">{a.data.bild && <img src={a.data.bild} alt={a.data.bildAlt ?? ''} loading="lazy" decoding="async" />}</div>
             <div>
               <p class="kicker"><span>{rubrikName(a.data.rubrik)}</span>{a.data.muster && <span class="muster">Muster</span>}</p>
               <span class="titel">{a.data.titel}</span>
@@ -53,7 +53,7 @@ const kurz = rest.slice(4, 10);
       {gross && (
         <article class="gross">
           <a href={`/artikel/${gross.id}/`}>
-            {gross.data.bild && <div class="bildrahmen"><img src={gross.data.bild} alt={gross.data.bildAlt ?? ''} loading="lazy" /></div>}
+            {gross.data.bild && <div class="bildrahmen"><img src={gross.data.bild} alt={gross.data.bildAlt ?? ''} loading="lazy" decoding="async" /></div>}
             <h3>{gross.data.titel}</h3>
           </a>
           <div style="margin-top:10px"><Kicker rubrik={gross.data.rubrik} datum={gross.data.datum} muster={gross.data.muster} /></div>
@@ -74,7 +74,7 @@ const kurz = rest.slice(4, 10);
     <aside class="seitenspalte">
       {rueckblick && (
         <a class="rueckblick" href={`/artikel/${rueckblick.id}/`} style="display:block">
-          {rueckblick.data.bild && <div class="bildrahmen" style="margin-bottom:14px"><img src={rueckblick.data.bild} alt="" loading="lazy" /></div>}
+          {rueckblick.data.bild && <div class="bildrahmen" style="margin-bottom:14px"><img src={rueckblick.data.bild} alt="" loading="lazy" decoding="async" /></div>}
           <Kicker rubrik={rueckblick.data.rubrik} datum={rueckblick.data.datum} muster={rueckblick.data.muster} />
           <h4>{rueckblick.data.titel}</h4>
           <p>{rueckblick.data.lead}</p>

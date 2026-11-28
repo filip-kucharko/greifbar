@@ -12,6 +12,10 @@ import '../styles/global.css';
 import { RUBRIKEN } from '../rubriken';
 import Logo from '../components/Logo.astro';
 import { SEITE } from '../config';
+// Wichtigste Schriften vorladen, damit die Seite beim Laden nicht springt (CLS)
+import fontSans400 from '@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url';
+import fontSans600 from '@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2?url';
+import fontSans700 from '@fontsource/source-sans-3/files/source-sans-3-latin-700-normal.woff2?url';
 
 interface Props {
   titel?: string;
@@ -21,8 +25,10 @@ interface Props {
   bildAlt?: string;
   typ?: 'website' | 'article';
   datum?: Date;
+  /** Wichtigstes Bild oben auf der Seite: wird vor allem anderen geladen (LCP) */
+  vorladen?: string;
 }
-const { titel, beschreibung = SEITE.beschreibung, aktiv = '', bild, bildAlt, typ = 'website', datum } = Astro.props;
+const { titel, beschreibung = SEITE.beschreibung, aktiv = '', bild, bildAlt, typ = 'website', datum, vorladen } = Astro.props;
 const seitentitel = titel ? `${titel} – Greifbar` : 'Greifbar – Robotik aus dem DACH-Raum';
 const basis = Astro.site ?? new URL('https://greifbar.eu');
 const kanonisch = new URL(Astro.url.pathname, basis).href;
@@ -40,6 +46,10 @@ const zaehlen = import.meta.env.PROD && SEITE.goatcounter;
     </script>
     <title>{seitentitel}</title>
     <meta name="description" content={beschreibung} />
+    {vorladen && !vorladen.endsWith('.svg') && <link rel="preload" href={vorladen} as="image" fetchpriority="high" />}
+    <link rel="preload" href={fontSans400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={fontSans600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={fontSans700} as="font" type="font/woff2" crossorigin />
     <!-- Favicon: Google braucht ein quadratisches Icon, am besten ein Vielfaches von 48 px -->
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

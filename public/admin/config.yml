@@ -9,6 +9,19 @@ backend:
 media_folder: public/bilder
 public_folder: /bilder
 
+# Bilder werden beim Hochladen automatisch verkleinert: höchstens 1600 px, WebP, Qualität 80.
+# Dateinamen werden dabei bereinigt (keine Leerzeichen/Umlaute).
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 80
+          width: 1600
+          height: 1600
+
 
 # Artikel-Adressen ohne Umlaute und Sonderzeichen (ü → ue, ß → ss), höchstens 80 Zeichen
 slug:

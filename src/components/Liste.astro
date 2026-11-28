@@ -13,7 +13,7 @@ const { artikel } = Astro.props;
           <span class="titel">{a.data.titel}</span>
           <p class="lead">{a.data.lead}</p>
         </div>
-        <div class="mini">{a.data.bild && <img src={a.data.bild} alt="" loading="lazy" />}</div>
+        <div class="mini">{a.data.bild && <img src={a.data.bild} alt="" loading="lazy" decoding="async" />}</div>
       </a>
     </li>
   ))}
