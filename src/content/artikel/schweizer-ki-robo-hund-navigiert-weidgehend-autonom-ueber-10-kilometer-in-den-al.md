@@ -5,8 +5,8 @@ datum: 2026-11-28
 rubrik: forschung
 autor: Filip Kucharko
 bild: ''
-bildAlt: ''
-bildQuelle: ''
+bildAlt: Wanderweg bei Zermatt mit Blick auf das Matterhorn (Symbolbild)
+bildQuelle: Anthony Rosset / Unsplash
 einordnung: |-
   Schon 2022 lief der ETH-Roboter allein auf den Etzel im Kanton Schwyz. Wohin er gehen sollte, musste ihm jedoch noch ein Mensch mitteilen. Neu ist nun, dass der Roboter die Situation selbst abwägt und seinen Weg selbst wählt.
   Für Roboter, die künftig Wege mit Menschen teilen, reicht es nicht aus, zwischen Felsen, Schildern und Lebewesen zu unterscheiden. Sie müssen auch wissen, wie sie sich der Situation entsprechend zu verhalten haben.
