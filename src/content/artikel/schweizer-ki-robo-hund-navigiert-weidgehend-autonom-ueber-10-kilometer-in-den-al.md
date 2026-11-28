@@ -1,26 +1,34 @@
 ---
-titel: Schweizer KI Robo-Hund navigiert weidgehend autonom über 10 Kilometer in den Alpen
-lead: Das Robotik Team der Robotic Systems Lab der ETH Zürich hat ein neues KI-Sprachmodell namens ROAM mit Bildverständnis entwickelt, womit es ihnen gelungen ist, dass ihr vierbeiniger Roboter fast selbständig kilometerweit durch die Alpen gewandert ist.
-datum: 2026-11-27
+titel: ETH-Roboter wandert mit KI-Hilfe über 10 Kilometer durch die Alpen
+lead: Das Robotic Systems Lab der ETH Zürich hat ein System namens ROAM entwickelt, das ein KI-Sprachmodell mit Bildverständnis nutzt. Damit ist es dem Team gelungen, dass sein vierbeiniger Roboter fast selbstständig kilometerweit durch die Alpen gewandert ist. Die Ergebnisse sind in der Fachzeitschrift Science Robotics erschienen.
+datum: 2026-11-28
 rubrik: forschung
 autor: Filip Kucharko
 bild: ''
 bildAlt: ''
 bildQuelle: ''
-einordnung: Das System hat aber auch seine Grenzen wie dass es eine ständige Cloud Verbindung benötigt wird oder bei schlechter Sicht, bspw. verursacht durch Nebel.
+einordnung: |-
+  Schon 2022 lief der ETH-Roboter allein auf den Etzel im Kanton Schwyz. Wohin er gehen sollte, musste ihm jedoch noch ein Mensch mitteilen. Neu ist nun, dass der Roboter die Situation selbst abwägt und seinen Weg selbst wählt.
+  Für Roboter, die künftig Wege mit Menschen teilen, reicht es nicht aus, zwischen Felsen, Schildern und Lebewesen zu unterscheiden. Sie müssen auch wissen, wie sie sich der Situation entsprechend zu verhalten haben.
+  Zugleich nennen die Forschenden Grenzen, an die sie gestoßen sind. Laut IT Boltwise funktioniert das System derzeit nur mit einer Internetverbindung, da das Sprachmodell in der Cloud läuft. Außerdem gilt schlechte Sicht, etwa durch Nebel, Regen oder Dunkelheit, noch als ungelöstes Problem. Im Paper schreiben die Forschenden selbst, dass Sprachmodelle noch keine vollständige Lösung sind.
+  An diesem Punkt steht nicht nur das Team der ETH. Aktuelle Fachartikel beschreiben das räumliche Verständnis von Sprachmodellen als zentralen Engpass für Roboter. Viele Forschungsgruppen setzen deshalb wie ROAM auf eine Arbeitsteilung: Das Sprachmodell übernimmt die Einschätzung der Lage, die eigentliche Steuerung eine eigene Software.
 quellen:
-  - name: Roam Projekt (inkl. Paper)
+  - name: ROAM-Projektseite (ETH Zürich)
     url: https://roam-hiking.github.io/#hikes
   - name: IT Boltwise
     url: https://www.it-boltwise.de/roam-system-roboterhund-wandert-fast-allein-ueber-10-kilometer-in-den-alpen.html
   - name: Tagesspiegel
     url: https://www.tagesspiegel.de/wissen/wenn-die-ki-wandern-geht-schweizer-robo-hund-navigiert-autonom-durch-die-alpen-16300311.html
-aufmacher: true
-entwurf: true
+  - name: Netzwoche (2022)
+    url: https://www.netzwoche.ch/news/2022-01-31/wie-roboter-wandern-lernen
+  - name: Übersichtsarbeit zu Sprachmodellen in der Roboternavigation (arXiv, 2026)
+    url: https://arxiv.org/html/2606.28760v1
+aufmacher: false
+entwurf: false
 ---
 
-Das System ROAM (Robust Open-world Autonomous Mobility) basiert technisch auf der Trenunng von Wahrnehmung und Mobilitätsmuster. Der Roboter sammelt über mehrere Sonsoren Signale wie u.a. durch Hochkontrastkameras, Tiefenkameras und Lidar Systeme. Diese Daten werden dann durch das System Interpretiert und das Sprachmodell differenziert zwischen Lebewesen, Wanderwegen, Felsen oder Schildern. Für die erkannten Elemente wird jeweils ein Risikowert von 0 bis 1 gesetzt aus dem das System eine Risikokarte erstellt. Aus dem gewonnen Wissen werden Handlungen abgeleitet die dann der Roboter ausführen soll. Die Bewegungssteuerung ist bei dem eingesetzten Robotern hochdynamisch und reagiert etwa 50-mal pro Sekunde um Stabilität aufrecht zu erhalten. Ganz im Gegenteil zum Sprachmodell das nur etwa alle 10 Sekunden eine Antwort liefert. 
+Das System ROAM (Robust Open-world Autonomous Mobility) basiert technisch auf der Trennung von Wahrnehmung und Bewegungssteuerung. Laut IT Boltwise sammelt der Roboter über mehrere Sensoren Signale, unter anderem über Hochkontrast-, Weitwinkel- und Tiefenkameras sowie Lidar. Diese Daten werden dann vom System interpretiert, und das Sprachmodell unterscheidet zwischen Lebewesen, Wanderwegen, Felsen oder Schildern. Für die erkannten Elemente wird jeweils ein Risikowert von 0 bis 1 gesetzt, aus dem das System eine Risikokarte erstellt. Aus dieser Karte leiten zwei trainierte Steuerungen die Bewegungen ab, die der Roboter dann ausführt. Die Bewegungssteuerung ist hochdynamisch und reagiert etwa 50-mal pro Sekunde, um die Stabilität aufrechtzuerhalten. Ganz im Gegensatz zum Sprachmodell, das nur etwa alle 10 Sekunden eine Antwort liefert.
 
-Dem Paper zufolge wurden 2 konkrete Langzeittests durchgeführt. Einer dieser Tests fand im Sommer 2024 in Zermatt auf einer Strecke von 10,1 Kilometern mit unterschiedlichen Steigungen, Bodenformen und Texturen wie Kies, Fels, Wiese und auf Bahngleise statt. Ein weiterer Test am Seealpsee wurde auf einer Strecke von 2,38 Kilometern durchgeführt, bei dem Wege mit Kühen und anderen Wanderern geteilt wurden. Bei Beiden Überprüfungen mussten laut den Forschenden "minimale Eingriffe" unternommen werden. Eine konrete Zahl, wie oft eingegriffen wurde nennt das Paper nicht.
+Dem Paper zufolge wurden unter anderem zwei Langzeittests durchgeführt. Einer davon fand im August 2024 bei Zermatt auf einer Strecke von 10,1 Kilometern statt, mit 1.220 Metern Abstieg und unterschiedlichen Untergründen wie Kies, Fels, Wiese und Bahngleisen. Ein weiterer Test am Seealpsee führte über 2,38 Kilometer, wobei sich der Roboter die Wege mit Kühen und anderen Wanderern teilte. Laut den Forschenden waren insgesamt nur minimale Eingriffe nötig. Eine konkrete Zahl, wie oft eingegriffen wurde, nennt das Paper nicht.
 
-Die Testbeispiele zeigten, dass das System nicht nur Hindernisse erkennt und ausweicht, sondern auch Wege kontextbasiert neu einschätzt. Wenn aufgrund von Bauarbeiten ein Schild mit Informationen zu einer Sperrung aufgestellt ist, bewertet ROAM die Situation neu und weicht stattdessen über eine benachbarte Wiese aus. Für den Praxis Einsatz sind solche Testsitationen vor allem Wichtig, da nicht alle Fälle in der realen Welt abgedeckt werden können und das System selbständig entscheiden muss ohne das es stecken bleibt.
+Die Testbeispiele zeigen, dass das System nicht nur Hindernisse erkennt und ihnen ausweicht, sondern Wege auch kontextbasiert neu einschätzt. Laut IT Boltwise stand bei einem Test ein Schild, das auf eine Sperrung wegen Bauarbeiten hinwies. ROAM bewertete die Situation neu und wich stattdessen über eine benachbarte Wiese aus.
