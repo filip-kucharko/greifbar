@@ -4,7 +4,7 @@ lead: Das Robotic Systems Lab der ETH Zürich hat ein System namens ROAM entwick
 datum: 2026-11-28
 rubrik: forschung
 autor: Filip Kucharko
-bild: /bilder/anthony-rosset-EER1-E87V2k-unsplash.jpg
+bild: /bilder/zermatt-wanderweg-symbolbild.jpg
 bildAlt: Wanderweg bei Zermatt mit Blick auf das Matterhorn (Symbolbild)
 bildQuelle: Anthony Rosset / Unsplash
 einordnung: |-
