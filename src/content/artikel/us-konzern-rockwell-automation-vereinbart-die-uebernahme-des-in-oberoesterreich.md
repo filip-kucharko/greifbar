@@ -17,7 +17,7 @@ quellen:
     url: https://evertiq.de/news/2026-11-20-rockwell-automation-ubernimmt-osterreichischen-robotikhersteller-agilox
   - name: Medianet
     url: https://newshub.medianet.com.au/2026/11/rockwell-automation-signs-definitive-agreement-to-acquire-agilox-2/182663/
-aufmacher: true
+aufmacher: false
 entwurf: false
 ---
 
