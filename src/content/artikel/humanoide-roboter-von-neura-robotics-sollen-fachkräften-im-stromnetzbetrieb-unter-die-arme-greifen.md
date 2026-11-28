@@ -21,7 +21,7 @@ quellen:
     url: https://logistik-heute.de/news/robotik-humanoide-roboter-sollen-fachkraefte-im-stromnetzbetrieb-entlasten-291970.html
   - name: Börse Online (dpa-AFX)
     url: https://www.boerse-online.de/dpa-afx/humanoide-roboter-sollen-stromnetz-fachkraefte-entlasten-563698.html
-aufmacher: true
+aufmacher: false
 entwurf: false
 ---
 
