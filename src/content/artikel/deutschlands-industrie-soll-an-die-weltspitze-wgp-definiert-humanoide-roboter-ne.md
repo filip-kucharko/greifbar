@@ -17,7 +17,7 @@ quellen:
     url: https://de.nachrichten.yahoo.com/deutschland-will-roboter-anders-bauen-123846458.html
   - name: Produktion.de
     url: https://www.produktion.de/wirtschaft/humanoide-produktionsroboter-wie-die-wgp-den-industriestandort-deutschland-an-die-weltspitze-fuehren-will/2768544
-aufmacher: true
+aufmacher: false
 entwurf: false
 ---
 
